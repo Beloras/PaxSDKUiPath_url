@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>CCVStore UiPath</id>
+    <version>1.0.0</version>
+    <title>CCVStore Library for UiPath</title>
+    <authors>Richard Vanraes & Renegade-Jedi</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <!-- <icon>icon.png</icon> -->
+    <description>CCVStore Library for UiPath with custom url</description>
+    <repository url="https://github.com/Beloras/PaxSDKUiPath_url" />
+    <releaseNotes>Custom url added to arguments</releaseNotes>
+    <copyright>2022</copyright>
+    <tags>CCVStore</tags>
+  </metadata>
+</package>
