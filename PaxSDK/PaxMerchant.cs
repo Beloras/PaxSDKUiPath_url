@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Paxstore.OpenApi;
 using Paxstore.OpenApi.Model;
 using System.Collections.Generic;
@@ -11,6 +11,10 @@ namespace PaxSDKUiPath
     #region PaxSearchMerchant
     public class PaxSearchMerchant : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -107,7 +111,8 @@ namespace PaxSDKUiPath
             }
 
             string NAME = Name.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
@@ -132,6 +137,10 @@ namespace PaxSDKUiPath
     #region PaxGetMerchant
     public class PaxGetMerchant : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -156,7 +165,8 @@ namespace PaxSDKUiPath
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
             long MERCHANTID = MerchantId.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
@@ -182,6 +192,11 @@ namespace PaxSDKUiPath
     public class PaxCreateMerchant : CodeActivity
     {
         #region Inputs
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
+
         [Category("Input")]
         [RequiredArgument]
         [Description("Enter Api Key")]
@@ -254,8 +269,9 @@ namespace PaxSDKUiPath
         {
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
-            
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
+
             string name = Name.Get(context);
             string email = Email.Get(context);
             string resellerName = ResellerName.Get(context);
@@ -308,6 +324,10 @@ namespace PaxSDKUiPath
     #region PaxDisableMerchant
     public class PaxDisableMerchant : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -332,7 +352,8 @@ namespace PaxSDKUiPath
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
             long merchantId = MerchantId.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
@@ -352,6 +373,10 @@ namespace PaxSDKUiPath
     #region PaxDeleteMerchant
     public class PaxDeleteMerchant : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -376,7 +401,8 @@ namespace PaxSDKUiPath
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
             long merchantId = MerchantId.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
