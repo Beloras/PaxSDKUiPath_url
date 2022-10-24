@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Paxstore.OpenApi;
 using Paxstore.OpenApi.Model;
 using System.Collections.Generic;
@@ -11,6 +11,10 @@ namespace PaxSDKUiPath
     #region PaxSearchTerminal
     public class PaxSearchTerminal : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -109,7 +113,8 @@ namespace PaxSDKUiPath
                     break;
             }
 
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
@@ -133,6 +138,10 @@ namespace PaxSDKUiPath
     #region PaxGetTerminal
     public class PaxGetTerminal : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -163,7 +172,8 @@ namespace PaxSDKUiPath
             string SECRET = Secret.Get(context);
             long tId = TId.Get(context);
             bool includeDetailInfo = IncludeDetailInfo.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
@@ -188,6 +198,11 @@ namespace PaxSDKUiPath
     public class PaxCreateTerminalAPK : CodeActivity
     {
         #region Inputs
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
+
         [Category("Input")]
         [RequiredArgument]
         [Description("Enter Api Key")]
@@ -231,7 +246,8 @@ namespace PaxSDKUiPath
         {
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
             string _TID = TId.Get(context);
             string serialNo = SerialNo.Get(context);
             string packageName = PackageName.Get(context);
@@ -271,6 +287,11 @@ namespace PaxSDKUiPath
     public class PaxCreateTerminal : CodeActivity
     {
         #region Inputs
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
+
         [Category("Input")]
         [RequiredArgument]
         [Description("Enter Api Key")]
@@ -328,8 +349,9 @@ namespace PaxSDKUiPath
         {
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
-            
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
+
             string name = Name.Get(context);
             string tid = TID.Get(context);
             string serialNo = SerialNo.Get(context);
@@ -375,6 +397,11 @@ namespace PaxSDKUiPath
     public class PaxUpdateTerminal : CodeActivity
     {
         #region Inputs
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
+
         [Category("Input")]
         [RequiredArgument]
         [Description("Enter Api Key")]
@@ -434,7 +461,8 @@ namespace PaxSDKUiPath
         {
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             long terminalId = TerminalId.Get(context);
             string name = Name.Get(context);
@@ -479,6 +507,10 @@ namespace PaxSDKUiPath
     #region PaxDeleteTerminal
     public class PaxDeleteTerminal : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -503,7 +535,8 @@ namespace PaxSDKUiPath
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
             long terminalId = TerminalId.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
@@ -523,6 +556,10 @@ namespace PaxSDKUiPath
     #region PaxDisableTerminal
     public class PaxDisableTerminal : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url")]
+        public InArgument<string> APIurl { get; set; }
 
         [Category("Input")]
         [RequiredArgument]
@@ -547,7 +584,8 @@ namespace PaxSDKUiPath
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
             long terminalId = TerminalId.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
