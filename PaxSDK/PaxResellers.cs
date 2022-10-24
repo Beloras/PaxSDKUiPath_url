@@ -9,6 +9,10 @@ namespace PaxSDKUiPath
 {
     public class PaxGetResellers : CodeActivity
     {
+        [Category("Input")]
+        [RequiredArgument]
+        [Description("Enter Api Url)]
+        public InArgument<string> APIurl { get; set; }
         
         [Category("Input")]
         [RequiredArgument]
@@ -33,7 +37,8 @@ namespace PaxSDKUiPath
             string KEY = APIKey.Get(context);
             string SECRET = Secret.Get(context);
             string NAME = Name.Get(context);
-            string BASEURL = "https://api.paxstore.us/p-market-api";
+            string BASEURL = APIurl.Get(context);
+            //string BASEURL = "https://api.paxstore.us/p-market-api";
 
             try
             {
