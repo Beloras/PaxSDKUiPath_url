@@ -11,7 +11,7 @@ namespace PaxSDKUiPath
     {
         [Category("Input")]
         [RequiredArgument]
-        [Description("Enter Api Url)]
+        [Description("Enter Api Url")]
         public InArgument<string> APIurl { get; set; }
         
         [Category("Input")]
